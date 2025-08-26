@@ -22,7 +22,7 @@ export default function PostPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/posts/${id}`)
+    fetch(`https://blogbackend-lime.vercel.app/api/posts/${id}`)
       .then((res) => {
         if (!res.ok) throw new Error("Post not found");
         return res.json();
