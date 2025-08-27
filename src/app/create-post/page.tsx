@@ -22,7 +22,7 @@ export default function NewPost() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://blogbackend-lime.vercel.app/api/posts", {
+      const res = await fetch("http://localhost:5000/api/posts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, content, author }),

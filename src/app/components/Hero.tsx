@@ -26,16 +26,16 @@ export default function Hero() {
 
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
             <Link
-              href="/"
+              href="/blogs-list"
               className="px-5 py-3 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition w-full sm:w-auto text-center"
             >
-              View Posts
+              View Blogs
             </Link>
             <Link
-              href="/new"
+              href="/create-post"
               className="px-5 py-3 rounded-lg bg-white text-gray-900 border border-gray-300 font-medium hover:border-gray-400 transition w-full sm:w-auto text-center"
             >
-              Create Post
+              Create Blog
             </Link>
           </div>
         </motion.div>
@@ -48,7 +48,7 @@ export default function Hero() {
           className="flex justify-center md:justify-end mt-8 md:mt-0"
         >
           <Image
-            src="https://res.cloudinary.com/dwg8d0bfp/image/upload/v1756227145/9626fca3-b2e6-4a6f-ba57-0066d758ef9d_tjvmyy.png"
+            src="https://res.cloudinary.com/dwg8d0bfp/image/upload/v1756258771/9626fca3-b2e6-4a6f-ba57-0066d758ef9d_tjvmyy-removebg-preview_qfcuuv.png"
             alt="Blog illustration"
             width={400}
             height={400}
