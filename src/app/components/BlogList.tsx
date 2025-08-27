@@ -58,7 +58,7 @@ export default function BlogList() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/posts")
+    fetch("https://blogbackend-lime.vercel.app/api/posts")
       .then((res) => res.json())
       .then((data) => setPosts(data))
       .finally(() => setLoading(false));

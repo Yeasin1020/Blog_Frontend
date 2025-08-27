@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [lang, setLang] = useState<"en" | "bn">("en");
+
   const pathname = usePathname();
 
   const links = [
