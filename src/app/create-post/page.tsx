@@ -56,12 +56,12 @@ export default function NewPost() {
       <div
         ref={cardRef}
         onMouseMove={handleMouseMove}
-        className="relative rounded-2xl p-[2px] transition-all duration-300"
+        className="relative rounded-2xl p-[2px] transition-all duration-300 w-full max-w-xl"
         style={{
           background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, #9E7AFF, #38bdf8, #FF5C5C, #FE8BBB, transparent 80%)`,
         }}
       >
-        <div className="max-w-xl w-full bg-white shadow-xl rounded-2xl p-8 md:p-12">
+        <div className="bg-white rounded-2xl shadow-xl p-6 sm:p-10 max-h-[90vh] overflow-y-auto">
           <h1 className="text-3xl font-extrabold text-gray-900 mb-6 text-center">
             Create a New Post
           </h1>
@@ -99,7 +99,7 @@ export default function NewPost() {
                 placeholder="Write your post here..."
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-3 h-48 resize-none"
+                className="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm p-3 h-72 resize-y max-h-[60vh] overflow-y-auto"
                 required
               />
             </div>
@@ -127,7 +127,7 @@ export default function NewPost() {
               type="submit"
               disabled={loading}
               className={clsx(
-                "w-full flex justify-center py-3 px-6 border border-transparent rounded-lg shadow-sm text-white text-lg font-medium bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition",
+                "w-full py-3 px-6 rounded-lg text-white font-semibold bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow transition",
                 loading ? "opacity-50 cursor-not-allowed" : ""
               )}
             >

@@ -16,7 +16,7 @@ export default function Hero() {
           className="text-center md:text-left"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-            Welcome to <span className="text-indigo-600">My Blog</span>
+            Welcome to <span className="text-indigo-600">Blog Master</span>
           </h1>
 
           <p className="mt-4 sm:mt-5 text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto md:mx-0">

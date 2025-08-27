@@ -6,6 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import DetailsPageSkeleton from "./BlogDetailsSkeleton";
 
 interface Post {
   _id: string;
@@ -32,12 +33,7 @@ export default function PostPage() {
       .finally(() => setLoading(false));
   }, [id]);
 
-  if (loading)
-    return (
-      <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-indigo-50 to-white">
-        <p className="text-gray-400 text-base animate-pulse">Loading post...</p>
-      </main>
-    );
+  if (loading) return <DetailsPageSkeleton></DetailsPageSkeleton>;
 
   if (!post)
     return (

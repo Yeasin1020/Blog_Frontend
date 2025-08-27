@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 "use client";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaTwitter,
@@ -9,11 +10,11 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 ">
+    <footer className="bg-gray-50 border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-12 md:py-16 grid md:grid-cols-3 gap-8">
         {/* Branding */}
         <div className="flex flex-col gap-2">
-          <h2 className="text-2xl font-bold text-indigo-600">MyBlog</h2>
+          <h2 className="text-2xl font-bold text-indigo-600">BlogMaster</h2>
           <p className="text-gray-600 max-w-xs">
             Sharing knowledge, stories, and insights. Stay updated with the
             latest posts.
@@ -26,24 +27,33 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 mb-2">Company</h3>
             <ul className="space-y-1 text-gray-600">
               <li>
-                <a href="/" className="hover:text-indigo-600 transition">
+                <Link href="/" className="hover:text-indigo-600 transition">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="hover:text-indigo-600 transition">
+                <Link
+                  href="/about"
+                  className="hover:text-indigo-600 transition"
+                >
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="hover:text-indigo-600 transition">
+                <Link
+                  href="/contact"
+                  className="hover:text-indigo-600 transition"
+                >
                   Contact
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/new" className="hover:text-indigo-600 transition">
-                  New Post
-                </a>
+                <Link
+                  href="/blogs-list"
+                  className="hover:text-indigo-600 transition"
+                >
+                  Blog List
+                </Link>
               </li>
             </ul>
           </div>
@@ -82,7 +92,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-200 mt-8 pt-6 text-center text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} MyBlog. All rights reserved.
+        &copy; {new Date().getFullYear()} BlogMaster. All rights reserved.
       </div>
     </footer>
   );

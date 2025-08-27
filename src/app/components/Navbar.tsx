@@ -12,21 +12,22 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const links = [
-    { name: lang === "en" ? "Home" : "হোম", href: "/" },
-    { name: lang === "en" ? "About" : "আমাদের সম্পর্কে", href: "/about" },
-    { name: lang === "en" ? "Contact" : "যোগাযোগ", href: "/contact" },
-    { name: lang === "en" ? "New Post" : "নতুন পোস্ট", href: "/new" },
+    { name: "Home", href: "/" },
+    { name: "Blogs List", href: "/blogs-list" },
+    { name: "About", href: "/about" },
+    { name: "Contact", href: "/contact" },
+    { name: "Create Post", href: "/create-post" },
   ];
 
   return (
-    <nav className="bg-gray-50 border-b border-gray-200 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-gray-50/80">
+    <nav className="bg-white border-b border-gray-200 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/80 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
         {/* Logo */}
         <a
           href="/"
-          className="text-xl font-bold text-indigo-600 tracking-tight"
+          className="text-2xl font-bold text-indigo-600 tracking-tight hover:text-indigo-700 transition"
         >
-          My<span className="text-gray-800">Blog</span>
+          Blog<span className="text-gray-800">Master</span>
         </a>
 
         {/* Desktop Menu */}
@@ -35,9 +36,9 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`font-medium transition-colors duration-200 px-2 py-1 rounded-md ${
+                className={`font-medium transition-colors duration-200 px-3 py-1 rounded-md ${
                   pathname === link.href
-                    ? "text-indigo-600 bg-indigo-50"
+                    ? "text-indigo-600 bg-indigo-50 shadow-sm"
                     : "text-gray-700 hover:text-indigo-600 hover:bg-gray-100"
                 }`}
               >
@@ -47,19 +48,10 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Actions */}
-        <div className="flex items-center gap-3">
-          {/* Language Toggle */}
+        {/* Mobile Menu Button */}
+        <div className="flex items-center gap-3 md:hidden">
           <button
-            onClick={() => setLang(lang === "en" ? "bn" : "en")}
-            className="px-3 py-1 rounded-md bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition"
-          >
-            {lang === "en" ? "বাংলা" : "EN"}
-          </button>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-md hover:bg-gray-100"
+            className="p-2 rounded-md hover:bg-gray-100 transition"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
@@ -72,7 +64,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu with Animation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -80,16 +72,16 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden bg-gray-50 px-4 pb-4 border-t border-gray-200"
+            className="md:hidden bg-white px-4 pb-4 border-t border-gray-200 shadow-sm"
           >
             <ul className="flex flex-col gap-2 pt-2">
               {links.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`block font-medium transition px-2 py-2 rounded-md ${
+                    className={`block font-medium transition px-3 py-2 rounded-md ${
                       pathname === link.href
-                        ? "text-indigo-600 bg-indigo-50"
+                        ? "text-indigo-600 bg-indigo-50 shadow-sm"
                         : "text-gray-700 hover:text-indigo-600 hover:bg-gray-100"
                     }`}
                   >

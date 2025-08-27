@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import BlogListSkeleton from "./BlogListSkeleton";
 
 // Utility to join class names
 const clsx = (...args: (string | boolean | undefined | null)[]) =>
@@ -71,9 +72,7 @@ export default function BlogList() {
       </h1>
 
       {/* Loading state */}
-      {loading && (
-        <p className="text-center text-gray-500 py-10">Loading posts...</p>
-      )}
+      {loading && <BlogListSkeleton></BlogListSkeleton>}
 
       {/* Empty state */}
       {!loading && posts.length === 0 && (
